@@ -14,12 +14,12 @@ for image in image_paths:
     cv2.waitKey(0)              #Here we are waiting for a key press before we load and append our next image.
 
 
-imagestitcher=cv2.Stitcher_create()
+imagestitcher=cv2.Stitcher_create()   #This fuction is used to stitch loaded images properly.
 
-error, stitched_img=imagestitcher.stitch(images)
+error, stitched_img=imagestitcher.stitch(images)  #error if it could not find enough keypoints to actually math the images. 
 
 if not error:
-    cv2.imwrite("stitchedOutput.png",stitched_img)
-    cv2.imshow("stitched I mage",stitched_img)
+    cv2.imwrite("stitchedOutput.png",stitched_img)  #It is a method used to save image in a currently working directory.
+    cv2.imshow("stitched Image",stitched_img)
     cv2.waitKey(0)
     
